@@ -1,7 +1,6 @@
 import numpy as np
 
-def project_onto_signal_subspace(data, eigenVectors):
-    r = 1 # Use r > 1
+def project_onto_signal_subspace(data, eigenVectors, r):
     U, sigma, V = np.linalg.svd(data)
     V = V.T
 
