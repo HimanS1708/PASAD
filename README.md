@@ -33,6 +33,10 @@ Dataset
 | Implementation       | Contains the steps of PASAD in individual python files and notebooks containing the solution to the respective questions   |
 | Results | Contains the images of various results  |
 
+## How to run?
+
+Enter the Implementation directory and download the required dependencies using ``` pip install -r requirements.txt ``` then run any notebook.
+
 ## Team
 
 Himanshu Shekhar (220454)
