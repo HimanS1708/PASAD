@@ -17,12 +17,12 @@ def plot_stuff(type, xmeas, X_train_extracted_data, dtrg_scores, dt_scores, dj_s
 
         plt.subplots_adjust(hspace=0.3)
 
-        xlables = list(range(0, len(xmeas) + 100, 10))
+        xlables = list(range(0, len(xmeas) + 100, 1000))
 
         xmeasx_1 = list(range(501))
         xmeasx_2 = list(range(501, 2001))
         xmeasx_3 = list(range(2001,len(xmeas)))
-        ax1.plot(xmeasx_1, xmeas[:501] ,'b', label='Training') 
+        ax1.plot(xmeasx_1, xmeas[:501] ,'b', label='Initial Phase') 
         ax1.plot(xmeasx_2, xmeas[501:2001] ,'k', label='Threshold calculation') 
         ax1.plot(xmeasx_3, xmeas[2001:] ,'r', label='Detection')
         ax1.plot(X_train_extracted_data, 'g', linewidth=1, label='Extracted Signal' )
@@ -40,10 +40,10 @@ def plot_stuff(type, xmeas, X_train_extracted_data, dtrg_scores, dt_scores, dj_s
 
         dy = dtrg_scores
         dx = list(range(L,len(dy)+L))
-        ax2.plot(dx, dy, 'c', label='Training phase')
+        ax2.plot(dx, dy, 'b', label='Initial Phase')
         dy = dt_scores
         dx = list(range(500,len(dy)+500))
-        ax2.plot(dx, dy, 'b', label='Threshold calculation')
+        ax2.plot(dx, dy, 'k', label='Threshold calculation')
         dy = dj_scores
         dx = list(range(2000,len(dy)+2000))
         ax2.plot(dx, dy, 'r', label='Detection Phase')
@@ -51,7 +51,7 @@ def plot_stuff(type, xmeas, X_train_extracted_data, dtrg_scores, dt_scores, dj_s
         ax2.vlines(2000,ylim[0],ylim[1],linestyles='dashed', colors='r')
         ax2.set_xticklabels(xlables)
         ax2.hlines(dt_theta,0,len(xmeas) + 100,linestyles='dashed', label='Alarm Threshold')
-        ax2.set_xlabel('Time in hours', bbox=box)
+        ax2.set_xlabel('Data points', bbox=box)
         ax2.set_ylabel('Departure Score', bbox=box)
 
         X = np.array([[2000, len(xmeas) + 100],[2000, len(xmeas) + 100]])
@@ -63,7 +63,7 @@ def plot_stuff(type, xmeas, X_train_extracted_data, dtrg_scores, dt_scores, dj_s
     elif(type==2):
         style.use('default')
         box = dict(facecolor='yellow', pad=3, alpha=0.2)
-        fig = plt.figure(figsize=(10,7))
+        fig = plt.figure(figsize=(15,7))
         ax1 = fig.add_subplot(211)
         ax2 = fig.add_subplot(212)
 
