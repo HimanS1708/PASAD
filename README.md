@@ -8,6 +8,24 @@ SWaT Dataset: [here](https://drive.google.com/drive/folders/1zn0DMCdSXA9b_CiaaoD
 
 TE Dataset: [here](https://github.com/mikeliturbe/pasad/tree/master/data)
 
+Create a directory named "Dataset" in the PASAD directory and organise it as -
+
+Dataset
+
+    - SWaT
+        -- *Files
+    - TE
+        - 1-Scenario DA1
+            -- *File
+        - 2-Scenario DA2
+            -- *File
+        - 3-Scenario SA1
+            -- *File
+        - 4-Scenario SA2
+            -- *File
+        - 5-Scenario SA3
+            -- *File
+
 ## Repository Structure
 
 | Directory       | Description |
